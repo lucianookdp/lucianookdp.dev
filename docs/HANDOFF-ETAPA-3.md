@@ -10,7 +10,7 @@ Este documento registra o estado após a etapa 2 e orienta a revisão. Não repr
 
 ## Base correta de trabalho
 
-- Repositório de referência: https://github.com/lucianookdp/portfolio-lucianookdp.
+- Repositório de referência: https://github.com/lucianookdp/lucianookdp.dev.
 - A etapa 2 partiu da versão local em `C:\dev\portfolio-lucianookdp`, mas foi implementada em uma cópia. Na etapa 3, essa cópia foi trazida para o repositório no commit `b1db2c8` (branch `feat/foco-em-servicos`). Desde então, o repositório é a base de trabalho.
 - A versão atualizada desta entrega está em:
 

@@ -1,16 +1,28 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
 import ProjectCard from './ProjectCard.astro';
-import projectsData from '../../data/projects.json';
 import type { Dictionary, Locale } from '../../i18n/utils';
+
+// Archived: not rendered on any page. The old project list (src/data/projects.json)
+// was removed; pass the entries in through `projects` when this is reused.
+export interface ProjectEntry {
+  id: string;
+  enabled: boolean;
+  repoUrl: string;
+  demoUrl: string | null;
+  demoMaintenance?: boolean;
+  stack: string[];
+  translations: Record<Locale, { name: string; subtitle: string; problem?: string; result: string }>;
+}
 
 interface Props {
   dict: Dictionary;
   locale: Locale;
+  projects: ProjectEntry[];
 }
 
 const { dict, locale } = Astro.props;
-const projects = projectsData.filter((project) => project.enabled);
+const projects = Astro.props.projects.filter((project) => project.enabled);
 
 // Structured data so search engines can list the projects as software.
 const projectsSchema = {
@@ -25,7 +37,7 @@ const projectsSchema = {
       name: project.translations[locale].name,
       description: project.translations[locale].result,
       codeRepository: project.repoUrl,
-      ...(project.demoUrl && !('demoMaintenance' in project && project.demoMaintenance) ? { url: project.demoUrl } : {}),
+      ...(project.demoUrl && !project.demoMaintenance ? { url: project.demoUrl } : {}),
       programmingLanguage: project.stack,
       author: { '@type': 'Person', name: 'Luciano K. Dal Pai', url: String(Astro.site) }
     }
@@ -44,7 +56,7 @@ const projectsSchema = {
         index={index + 1}
         id={project.id}
         demoUrl={project.demoUrl}
-        demoMaintenance={'demoMaintenance' in project && project.demoMaintenance === true}
+        demoMaintenance={project.demoMaintenance === true}
         stack={project.stack}
         translation={project.translations[locale]}
         dict={dict}

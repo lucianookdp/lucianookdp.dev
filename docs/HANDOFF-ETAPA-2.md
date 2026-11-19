@@ -121,7 +121,7 @@ Todas são feitas em HTML/CSS, legíveis sem JavaScript ou WebGL, ficam ocultas 
 | `image` | caminho em `public/media/...`, com texto alternativo por idioma |
 | `url` | link para o trabalho publicado (opcional, se o cliente autorizar) |
 
-Os dados podem ficar em um JSON em `src/data/`. O arquivo `src/data/projects.json` antigo segue uma estrutura parecida (`id`, `enabled`, `demoUrl`, `translations.{pt,en}`) e foi mantido como referência, sem ser exibido. Os projetos antigos (Consulta CNPJ, Racha Contas, Achados e Perdidos, Eleições Brasil) **não** devem voltar como exemplos.
+Os dados podem ficar em um JSON em `src/data/`. O antigo `src/data/projects.json` foi apagado em 19/11/2026 (está no histórico do git); a estrutura dele (`id`, `enabled`, `demoUrl`, `translations.{pt,en}`) ficou descrita no tipo `ProjectEntry` de `Projects.astro`, que agora recebe a lista pela prop `projects`. Os projetos antigos (Consulta CNPJ, Racha Contas, Achados e Perdidos, Eleições Brasil) **não** devem voltar como exemplos.
 
 **Componentes que podem ser reaproveitados**:
 

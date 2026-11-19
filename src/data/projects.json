@@ -57,35 +57,6 @@
     }
   },
   {
-    "id": "rachai",
-    "demoMaintenance": false,
-    "enabled": true,
-    "repoUrl": "https://github.com/lucianookdp/rachai-web",
-    "demoUrl": "https://lucianookdp.github.io/rachai-web/",
-    "stack": [
-      "TypeScript",
-      "React",
-      "Fastify",
-      "Prisma",
-      "PostgreSQL"
-    ],
-    "translations": {
-      "pt": {
-        "name": "Racha Contas",
-        "subtitle": "Divida despesas com amigos sem complicação.",
-        "result": "Organize os gastos de viagens, jantares e outros encontros com amigos. Veja quanto cada pessoa deve pagar e acerte as contas sem complicação."
-      },
-      "en": {
-        "name": "Split the Bill",
-        "subtitle": "Share expenses with friends, without hassle.",
-        "result": "Organize shared expenses for trips, dinners and other plans with friends. See how much each person owes and settle up without the confusion."
-      }
-    },
-    "media": {
-      "slot": "rachai"
-    }
-  },
-  {
     "id": "lost-and-found",
     "demoMaintenance": false,
     "enabled": true,

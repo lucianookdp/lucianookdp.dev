@@ -28,4 +28,4 @@ light and dark themes.
 
 ## License
 
-All rights reserved. The code is public for reference only.
+MIT License. See [LICENSE](LICENSE).
